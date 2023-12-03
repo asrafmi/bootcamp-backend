@@ -1,0 +1,23 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Details</h2>
+            <% if (!employee) { %>
+                <div class="alert alert-danger fw-bold" role="alert">
+                    Data kontak tidak ada! <br> <a href="/employee" class="alert-link fw-normal">&laquo; kembali ke daftar kontak</a>
+                </div>
+            <% } else { %>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= employee.nama %> </h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= employee.hari %> </h6>
+                  <p class="card-text"><%= employee.jumlah %> </p>
+                  <a href="/employee/edit/<%= employee.nama %>" class="badge rounded-pill bg-info fw-normal"></i> ubah</a>
+                  <a href="/employee/delete/<%= employee.nama %>" class="badge rounded-pill bg-danger fw-normal" onclick="return confirm('yakin?')"></i> Hapus</a>
+                  <a href="/employee" class="card-link d-block mt-2">&laquo; Kembali ke daftar Pegawai</a>
+                </div>
+            </div>
+            <% } %> 
+        </div>
+    </div>
+</div>
